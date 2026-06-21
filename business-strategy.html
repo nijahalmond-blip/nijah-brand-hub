@@ -201,6 +201,15 @@
   .asset .badge{cursor:pointer;user-select:none}
   .asset .badge:hover{filter:brightness(.96)}
   .badge.b-idea{background:#EEE9F2;color:#6E5F86}
+  /* implementation map */
+  .map-row{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid rgba(7,59,69,.1)}
+  .map-row:last-child{border-bottom:none}
+  .map-row .stg{font-family:'Cormorant Garamond',serif;font-size:21px;color:#073B45;font-weight:600}
+  .map-row .stg small{display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(42,31,26,.45);font-weight:600;margin-top:3px}
+  .map-row .ass{font-size:15px;color:rgba(42,31,26,.82);line-height:1.55}
+  .map-note{background:#F6E4DA;border-left:4px solid #F2B41A;border-radius:10px;padding:18px 20px;margin:26px 0;font-size:15px;line-height:1.6}
+  .stage-h{font-family:'Cormorant Garamond',serif;font-size:22px;color:#073B45;font-weight:600;margin:28px 0 8px}
+  @media(max-width:600px){.map-row{grid-template-columns:1fr;gap:4px}}
 </style>
 </head>
 <body>
@@ -236,7 +245,7 @@
     <a href="#now">Now</a><a href="#position">Positioning</a><a href="#avatar">Avatar</a>
     <a href="#ascension">Ascension</a><a href="#pillars">Pillars</a><a href="#voice">Voice</a>
     <a href="#offers">Offers</a><a href="#funnel">Funnel</a><a href="#assets">Assets</a>
-    <a href="#testing">Testing</a><a href="#plan">Plan</a><a href="#actions">Actions</a>
+    <a href="#testing">Testing</a><a href="#plan">Plan</a><a href="#map">Map</a><a href="#actions">Actions</a>
   </div>
 </div></nav>
 
@@ -458,6 +467,42 @@
     <ul><li>Enroll 5 founding clients into The Next Chapter Experience&trade; at $1,500-$2,500.</li><li>Deliver and document every transformation into case studies.</li><li>Raise the price toward $3K-$10K as proof accumulates.</li><li>Set the monthly rhythm: content, roundtable, conversations, enroll, deliver, capture proof.</li></ul></div>
 </div></section>
 
+<!-- IMPLEMENTATION MAP -->
+<section class="sec-cream" id="map"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The asset map</span><h2>How every asset serves the strategy</h2>
+    <p>The hub is the inventory. The strategy is the sequence. Most of this already exists — the work is consolidating to one spine and activating in order.</p></div>
+  <div class="map-rows">
+    <div class="map-row"><div class="stg">Attract<small>TOFU</small></div><div class="ass">Free assessments (Identity Gap Score, Analyzer, Identity Leak, Sparkle Scan, GRIT Scorecard, Your Qualifier) + pillar content. Diagnose the gap, capture the email.</div></div>
+    <div class="map-row"><div class="stg">Nurture<small>MOFU</small></div><div class="ass">The Identity Reset 9-day course &rarr; Identity Audit Workbook, Legacy Lounge (free community), newsletter, Mirror Method, OBI. Build belief and recognition.</div></div>
+    <div class="map-row"><div class="stg">Convert<small>BOFU</small></div><div class="ass">Identity Gap Workshop ($97) &rarr; Clarity Conversation &rarr; Close the Gap / GRIT Run. Turn belief into a decision.</div></div>
+    <div class="map-row"><div class="stg">Deliver<small>The ladder</small></div><div class="ass">WHISPER &rarr; GRIT (12-week) &rarr; SPARKLE &rarr; ASCEND, the Next Chapter Experience, and VIP. The transformation ladder.</div></div>
+    <div class="map-row"><div class="stg">Retain<small>Ascend</small></div><div class="ass">Legacy Lounge Experience (membership), Boss Journal, GRIT Reset. Recurring revenue and cross-sell.</div></div>
+  </div>
+  <p class="map-note"><b>The one move that matters:</b> 6+ assessments and 7+ lead magnets run in parallel today, but the strategy calls for a single call to action. Consolidate to one spine — Identity Gap Score &rarr; Identity Reset + Workbook &rarr; Workshop / Clarity Conversation &rarr; GRIT &rarr; Legacy Lounge Experience — and make everything else a feeder or an A/B test, not a competing front door.</p>
+
+  <h3 class="stage-h">Stage 0 — Consolidate &amp; connect (this week)</h3>
+  <div class="actions">
+    <div class="act"><div class="box"></div><div class="txt">Wire The Identity Reset into Kit and add the opt-in capture URL.</div><div class="pri p-now">Stage 0</div></div>
+    <div class="act"><div class="box"></div><div class="txt">Pick the ONE front-door assessment. Point all content and CTAs to it; park or A/B the rest.</div><div class="pri p-now">Stage 0</div></div>
+    <div class="act"><div class="box"></div><div class="txt">Fix the two broken deploys (GRIT Launchpad, Your Qualifier).</div><div class="pri p-now">Stage 0</div></div>
+  </div>
+  <h3 class="stage-h">Stage 1 — Reach (Days 1-30)</h3>
+  <div class="actions">
+    <div class="act"><div class="box"></div><div class="txt">Course live. Post 10 pillar posts and track signal, not likes.</div><div class="pri p-now">Stage 1</div></div>
+    <div class="act"><div class="box"></div><div class="txt">Open Clarity Conversation booking. Single CTA everywhere: assessment &rarr; workbook.</div><div class="pri p-now">Stage 1</div></div>
+  </div>
+  <h3 class="stage-h">Stage 2 — Prove (Days 31-60)</h3>
+  <div class="actions">
+    <div class="act"><div class="box"></div><div class="txt">Run 15 discovery conversations. Host the first Success Threshold roundtable.</div><div class="pri p-soon">Stage 2</div></div>
+    <div class="act"><div class="box"></div><div class="txt">Build the consolidated Success Threshold Assessment. Start the weekly newsletter.</div><div class="pri p-soon">Stage 2</div></div>
+  </div>
+  <h3 class="stage-h">Stage 3 — Enroll (Days 61-90)</h3>
+  <div class="actions">
+    <div class="act"><div class="box"></div><div class="txt">Enroll 5 founding clients into GRIT / Next Chapter ($1,500-2,500). Document case studies.</div><div class="pri p-then">Stage 3</div></div>
+    <div class="act"><div class="box"></div><div class="txt">Turn on continuity: Legacy Lounge Experience, Boss Journal, GRIT Reset. Raise the price as proof accumulates.</div><div class="pri p-then">Stage 3</div></div>
+  </div>
+</div></section>
+
 <!-- ACTION ITEMS -->
 <section class="sec-white" id="actions"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Your action items</span><h2>What to do, in priority order</h2>
@@ -489,10 +534,11 @@
   var K='biz-strategy-state-v1';
   var st={done:{},assets:{}};try{var s=JSON.parse(localStorage.getItem(K));if(s){st=s;st.done=st.done||{};st.assets=st.assets||{}}}catch(e){}
   function save(){try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}
-  document.querySelectorAll('#actions .act').forEach(function(a,i){
-    if(st.done[i])a.classList.add('done');
+  document.querySelectorAll('.act').forEach(function(a){
+    var t=a.querySelector('.txt');var key=(t?t.textContent:'').toLowerCase().replace(/[^a-z0-9]+/g,'-').slice(0,64);
+    if(st.done[key])a.classList.add('done');
     var box=a.querySelector('.box');
-    if(box)box.addEventListener('click',function(){a.classList.toggle('done');st.done[i]=a.classList.contains('done');save();});
+    if(box)box.addEventListener('click',function(){a.classList.toggle('done');st.done[key]=a.classList.contains('done');save();});
   });
   var ORDER=['b-live','b-build','b-next','b-idea'],LBL={'b-live':'Live','b-build':'In progress','b-next':'Build next','b-idea':'Idea'};
   document.querySelectorAll('#assets .asset').forEach(function(a,i){
