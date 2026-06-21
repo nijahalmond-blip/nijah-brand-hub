@@ -99,6 +99,30 @@
 </head>
 <body>
 
+<div id="gate" style="position:fixed;inset:0;z-index:9999;background:#073B45;display:flex;align-items:center;justify-content:center;padding:24px">
+  <div style="text-align:center;max-width:340px;width:100%;font-family:'DM Sans',sans-serif;color:#fff">
+    <img src="favicon.svg" alt="" style="width:54px;height:54px;border-radius:12px;margin-bottom:18px">
+    <h1 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;margin-bottom:6px">Brand Hub</h1>
+    <p style="color:rgba(255,255,255,.7);font-size:14px;margin-bottom:20px">Private. Enter the password to continue.</p>
+    <input id="gatePw" type="password" placeholder="Password" autocomplete="current-password" style="width:100%;font-size:16px;padding:13px 15px;border:1px solid rgba(255,255,255,.25);border-radius:10px;background:rgba(255,255,255,.06);color:#fff;outline:none">
+    <button id="gateBtn" style="width:100%;margin-top:12px;background:#F2B41A;color:#073B45;border:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;padding:13px;border-radius:10px;cursor:pointer">Unlock</button>
+    <p id="gateErr" style="color:#E37A7A;font-size:13px;margin-top:12px;min-height:18px"></p>
+  </div>
+</div>
+<script>
+(function(){
+  var HASH='a62c1b7c3e007a4891e136c9bb740cd0c68597b2862f1aadc6c856e4657e2329';
+  var gate=document.getElementById('gate'),pw=document.getElementById('gatePw'),err=document.getElementById('gateErr');
+  function open(){gate.style.display='none';document.body.style.overflow='';}
+  if(sessionStorage.getItem('hub-ok')==='1'){open();}else{document.body.style.overflow='hidden';}
+  async function sha(s){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('');}
+  async function tryPw(){var h=await sha(pw.value);if(h===HASH){sessionStorage.setItem('hub-ok','1');open();}else{err.textContent='Incorrect password.';pw.value='';pw.focus();}}
+  document.getElementById('gateBtn').onclick=tryPw;
+  pw.addEventListener('keydown',function(e){if(e.key==='Enter')tryPw();});
+  pw.focus();
+})();
+</script>
+
 <div class="bar"><div class="row">
   <div class="brandmark"><img src="favicon.svg" alt=""> Brand Hub</div>
   <nav class="nav">
