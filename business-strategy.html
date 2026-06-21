@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Business Strategy — Nijah Almond Coaching &amp; Consultancy</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-deep:#073B45;--teal-mid:#085866;--teal-light:#0C6373;
+    --amber:#F2B41A;--ink:#2A1F1A;--terracotta:#E37A7A;
+    --blush:#E8B7C5;--blush-light:#F6E4DA;--cream:#FBF4EE;--white:#FFFFFF;
+    --serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spacing:-.01em}
+  .eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--amber)}
+  a{color:var(--teal-mid)}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(7,59,69,.97);backdrop-filter:blur(8px)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;overflow-x:auto}
+  .brand{font-family:var(--serif);font-size:20px;color:#fff;white-space:nowrap}
+  .navlinks{display:flex;gap:20px}
+  .navlinks a{color:rgba(255,255,255,.85);text-decoration:none;font-size:12.5px;letter-spacing:.03em;white-space:nowrap}
+  .navlinks a:hover{color:var(--amber)}
+  @media(max-width:900px){.navlinks{display:none}}
+
+  .hero{background:var(--teal-deep);color:#fff;padding:100px 0 88px;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;right:-90px;top:-90px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(242,180,26,.16),transparent 70%)}
+  .hero .wrap{position:relative;z-index:1;max-width:900px}
+  .hero h1{font-size:clamp(40px,5.6vw,74px);margin:18px 0 22px;color:#fff}
+  .hero h1 em{font-style:italic;color:var(--amber)}
+  .hero p{font-size:19px;font-weight:300;color:rgba(255,255,255,.86);max-width:62ch}
+  .hero .stamp{margin-top:28px;font-size:13px;color:rgba(255,255,255,.55)}
+
+  section{padding:76px 0}
+  .sec-cream{background:var(--cream)}.sec-white{background:var(--white)}
+  .sec-blush{background:var(--blush-light)}.sec-teal{background:var(--teal-deep);color:#fff}
+  .sec-head{max-width:760px;margin-bottom:40px}
+  h2{font-size:clamp(27px,3.3vw,40px);margin:10px 0 14px}
+  .sec-teal h2{color:#fff}
+  .sec-head p{font-size:17px;color:rgba(42,31,26,.72)}
+  .sec-teal .sec-head p{color:rgba(255,255,255,.8)}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .stat{background:var(--white);border:1px solid rgba(7,59,69,.1);border-radius:14px;padding:24px 20px;border-top:3px solid var(--amber)}
+  .stat .k{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--teal-mid);margin-bottom:8px}
+  .stat .v{font-family:var(--serif);font-size:27px;color:var(--teal-deep);line-height:1.05}
+  .stat .s{font-size:12.5px;color:rgba(42,31,26,.6);margin-top:7px}
+  @media(max-width:860px){.stat-grid{grid-template-columns:1fr 1fr}}
+
+  .thesis{background:var(--teal-mid);border-left:4px solid var(--amber);border-radius:0 12px 12px 0;padding:32px 34px}
+  .thesis p{font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.8vw,29px);line-height:1.3;color:#fff}
+  .thesis p span{color:var(--amber)}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:34px}
+  .two h4{font-size:21px;color:var(--teal-deep);margin-bottom:8px}
+  .sec-teal .two h4{color:#fff}
+  .two p{font-size:15.5px;color:rgba(42,31,26,.8)}
+  .sec-teal .two p{color:rgba(255,255,255,.8)}
+  @media(max-width:760px){.two{grid-template-columns:1fr;gap:24px}}
+
+  .pos-box{background:#fffdf6;border:1px solid rgba(242,180,26,.5);border-radius:14px;padding:30px 32px;margin-bottom:18px}
+  .pos-box .tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9a7400;margin-bottom:8px}
+  .pos-box p{font-family:var(--serif);font-size:22px;font-style:italic;color:var(--teal-deep);line-height:1.32}
+  .notlist{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+  .notlist div{font-size:14.5px;color:rgba(42,31,26,.75);padding:9px 14px;background:var(--white);border:1px solid rgba(7,59,69,.1);border-radius:8px}
+  .notlist b{color:var(--terracotta)}
+  @media(max-width:600px){.notlist{grid-template-columns:1fr}}
+
+  /* avatar */
+  .av-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+  .av-table{width:100%;border-collapse:collapse}
+  .av-table td{padding:10px 0;border-bottom:1px solid rgba(7,59,69,.1);font-size:15px;vertical-align:top}
+  .av-table td:first-child{font-weight:600;color:var(--teal-mid);width:40%}
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .ba .col{border-radius:12px;padding:20px}
+  .ba .before{background:rgba(227,122,122,.12);border:1px solid rgba(227,122,122,.3)}
+  .ba .after{background:rgba(8,88,102,.08);border:1px solid rgba(8,88,102,.2)}
+  .ba h4{font-size:16px;margin-bottom:10px}
+  .ba .before h4{color:var(--terracotta)}.ba .after h4{color:var(--teal-mid)}
+  .ba ul{list-style:none;font-size:13.5px;color:rgba(42,31,26,.8)}
+  .ba li{padding:5px 0}
+  @media(max-width:780px){.av-grid{grid-template-columns:1fr;gap:26px}}
+
+  /* ascension ladder (IP stack) */
+  .ladder-steps{display:flex;flex-direction:column;gap:8px;counter-reset:rung}
+  .lstep{display:grid;grid-template-columns:210px 1fr;gap:22px;align-items:center;background:var(--teal-mid);border-left:4px solid var(--amber);border-radius:0 12px 12px 0;padding:18px 26px;color:#fff}
+  .lstep .lname{font-family:var(--serif);font-size:20px;color:#fff}
+  .lstep .lname small{display:block;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:3px}
+  .lstep .ljob{font-size:14px;color:rgba(255,255,255,.82)}
+  .lstep.protected{background:#0a4651;border-left-color:var(--terracotta)}
+  .lstep.protected .lname small{color:var(--terracotta)}
+  @media(max-width:680px){.lstep{grid-template-columns:1fr;gap:6px}}
+  .layernote{margin-top:18px;font-size:14px;color:rgba(255,255,255,.7);font-style:italic;font-family:var(--serif)}
+
+  /* pillars */
+  .pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+  .pillar{background:var(--white);border:1px solid rgba(7,59,69,.1);border-radius:12px;padding:22px 18px;border-top:3px solid var(--amber)}
+  .pillar .pn{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--terracotta);margin-bottom:6px}
+  .pillar h4{font-size:18px;color:var(--teal-deep);margin-bottom:8px;line-height:1.15}
+  .pillar p{font-size:13px;color:rgba(42,31,26,.7)}
+  .pillar .job{margin-top:10px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-mid)}
+  @media(max-width:900px){.pillars{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.pillars{grid-template-columns:1fr}}
+  .formula{margin-top:26px;text-align:center;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--teal-deep)}
+  .formula span{color:var(--amber);font-style:normal;font-family:var(--sans);font-weight:600;font-size:16px}
+
+  /* voice phrases */
+  .phrases{display:flex;flex-wrap:wrap;gap:10px}
+  .phrase{background:var(--white);border:1px solid rgba(7,59,69,.14);border-left:3px solid var(--amber);border-radius:8px;padding:12px 16px;font-family:var(--serif);font-style:italic;font-size:16px;color:var(--teal-deep)}
+  .wordrow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+  .wordrow .col{border-radius:12px;padding:18px 20px;font-size:14.5px}
+  .use{background:rgba(8,88,102,.08);border:1px solid rgba(8,88,102,.2)}
+  .lose{background:rgba(227,122,122,.1);border:1px solid rgba(227,122,122,.3)}
+  .wordrow h4{font-size:15px;margin-bottom:8px}
+  .use h4{color:var(--teal-mid)}.lose h4{color:var(--terracotta)}
+  @media(max-width:600px){.wordrow{grid-template-columns:1fr}}
+
+  /* offer ladder */
+  .rung{display:grid;grid-template-columns:200px 130px 1fr;gap:18px;align-items:center;background:var(--white);border:1px solid rgba(7,59,69,.1);border-radius:12px;padding:18px 24px;margin-bottom:10px}
+  .rung .name{font-family:var(--serif);font-size:20px;color:var(--teal-deep)}
+  .rung .price{font-weight:700;font-size:14.5px;color:var(--terracotta)}
+  .rung .desc{font-size:14px;color:rgba(42,31,26,.72)}
+  .rung.free{border-left:4px solid var(--teal-light)}
+  .rung.core{border-left:4px solid var(--amber);background:#fffdf6}
+  .rung.high{border-left:4px solid var(--terracotta)}
+  @media(max-width:680px){.rung{grid-template-columns:1fr;gap:5px}}
+
+  /* funnel */
+  .funnel{display:flex;flex-direction:column;max-width:740px;margin:0 auto}
+  .fstep{background:var(--white);border:1px solid rgba(7,59,69,.12);border-radius:12px;padding:18px 24px;text-align:center}
+  .fstep .ft{font-family:var(--serif);font-size:21px;color:var(--teal-deep)}
+  .fstep .fd{font-size:13px;color:rgba(42,31,26,.66);margin-top:3px}
+  .farrow{height:26px;display:flex;align-items:center;justify-content:center;color:var(--amber)}
+  .fstep.s1{width:100%}.fstep.s2{width:90%;align-self:center}.fstep.s3{width:78%;align-self:center}
+  .fstep.s4{width:64%;align-self:center;border-color:var(--amber);background:#fffdf6}
+  .fstep.s5{width:50%;align-self:center;border-color:var(--terracotta)}
+  @media(max-width:680px){.fstep{width:100%!important}}
+
+  /* assets */
+  .asset-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .asset{background:var(--white);border:1px solid rgba(7,59,69,.1);border-radius:14px;padding:22px 20px}
+  .asset .badge{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:11px}
+  .b-live{background:rgba(8,88,102,.14);color:var(--teal-mid)}
+  .b-build{background:rgba(242,180,26,.2);color:#9a7400}
+  .b-next{background:rgba(227,122,122,.16);color:var(--terracotta)}
+  .asset h4{font-size:19px;color:var(--teal-deep);margin-bottom:7px}
+  .asset p{font-size:13.5px;color:rgba(42,31,26,.72)}
+  @media(max-width:860px){.asset-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.asset-grid{grid-template-columns:1fr}}
+
+  /* testing ground */
+  .test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .test{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:22px 24px}
+  .test h4{font-size:19px;color:#fff;margin-bottom:6px}
+  .test h4 span{color:var(--amber)}
+  .test p{font-size:14px;color:rgba(255,255,255,.8)}
+  @media(max-width:680px){.test-grid{grid-template-columns:1fr}}
+
+  /* phases */
+  .phase{display:grid;grid-template-columns:190px 1fr;gap:28px;padding:26px 0;border-top:1px solid rgba(7,59,69,.12)}
+  .phase:first-of-type{border-top:none}
+  .phase .ph{font-family:var(--serif);font-size:23px;color:var(--teal-deep)}
+  .phase .ph small{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--terracotta);margin-top:4px}
+  .phase ul{list-style:none}
+  .phase li{position:relative;padding:6px 0 6px 24px;font-size:15px;color:rgba(42,31,26,.82)}
+  .phase li:before{content:"";position:absolute;left:0;top:14px;width:9px;height:9px;border-radius:2px;background:var(--amber)}
+  @media(max-width:680px){.phase{grid-template-columns:1fr;gap:6px}}
+
+  /* action checklist */
+  .actions{display:flex;flex-direction:column;gap:10px}
+  .act{display:grid;grid-template-columns:30px 1fr 96px;gap:14px;align-items:center;background:var(--white);border:1px solid rgba(7,59,69,.1);border-radius:10px;padding:16px 20px}
+  .act .box{width:22px;height:22px;border:2px solid var(--teal-light);border-radius:5px}
+  .act .txt{font-size:15.5px;color:var(--ink)}
+  .act .txt b{color:var(--teal-deep)}
+  .act .pri{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:right}
+  .p-now{color:var(--terracotta)}.p-soon{color:#9a7400}.p-then{color:var(--teal-mid)}
+  @media(max-width:600px){.act{grid-template-columns:24px 1fr;gap:10px}.act .pri{grid-column:2;text-align:left;margin-top:-6px}}
+
+  .cta{background:var(--teal-deep);color:#fff;text-align:center;padding:92px 0}
+  .cta h2{color:#fff;max-width:24ch;margin:0 auto 16px}
+  .cta h2 em{font-style:italic;color:var(--amber)}
+  .cta p{color:rgba(255,255,255,.82);max-width:56ch;margin:0 auto}
+  footer{background:#052b33;color:rgba(255,255,255,.6);padding:32px 0;text-align:center;font-size:13px}
+  /* interactive: checkable actions */
+  .act .box{cursor:pointer;transition:.15s}
+  .act .box:hover{border-color:#F2B41A}
+  .act.done .box{background:#2E8B6F;border-color:#2E8B6F;position:relative}
+  .act.done .box::after{content:"\2713";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+  .act.done .txt{opacity:.55;text-decoration:line-through;text-decoration-color:rgba(42,31,26,.4)}
+  /* interactive: clickable asset status badges */
+  .asset .badge{cursor:pointer;user-select:none}
+  .asset .badge:hover{filter:brightness(.96)}
+  .badge.b-idea{background:#EEE9F2;color:#6E5F86}
+</style>
+</head>
+<body>
+
+<div id="gate" style="position:fixed;inset:0;z-index:9999;background:#073B45;display:flex;align-items:center;justify-content:center;padding:24px">
+  <div style="text-align:center;max-width:340px;width:100%;font-family:Inter,'DM Sans',sans-serif;color:#fff">
+    <img src="favicon.svg" alt="" style="width:54px;height:54px;border-radius:12px;margin-bottom:18px">
+    <h1 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;margin-bottom:6px">Business Strategy</h1>
+    <p style="color:rgba(255,255,255,.7);font-size:14px;margin-bottom:20px">Private. Enter the password to continue.</p>
+    <input id="gatePw" type="password" placeholder="Password" autocomplete="current-password" style="width:100%;font-size:16px;padding:13px 15px;border:1px solid rgba(255,255,255,.25);border-radius:10px;background:rgba(255,255,255,.06);color:#fff;outline:none">
+    <button id="gateBtn" style="width:100%;margin-top:12px;background:#F2B41A;color:#073B45;border:none;font-family:Inter,sans-serif;font-weight:700;font-size:15px;padding:13px;border-radius:10px;cursor:pointer">Unlock</button>
+    <p id="gateErr" style="color:#E37A7A;font-size:13px;margin-top:12px;min-height:18px"></p>
+  </div>
+</div>
+<script>
+(function(){
+  var HASH='a62c1b7c3e007a4891e136c9bb740cd0c68597b2862f1aadc6c856e4657e2329';
+  var gate=document.getElementById('gate'),pw=document.getElementById('gatePw'),err=document.getElementById('gateErr');
+  function open(){gate.style.display='none';document.body.style.overflow='';}
+  if(sessionStorage.getItem('hub-ok')==='1'){open();}else{document.body.style.overflow='hidden';}
+  async function sha(s){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('');}
+  async function tryPw(){var h=await sha(pw.value);if(h===HASH){sessionStorage.setItem('hub-ok','1');open();}else{err.textContent='Incorrect password.';pw.value='';pw.focus();}}
+  document.getElementById('gateBtn').onclick=tryPw;
+  pw.addEventListener('keydown',function(e){if(e.key==='Enter')tryPw();});
+  pw.focus();
+})();
+</script>
+
+<nav><div class="wrap">
+  <span class="brand">Nijah Almond</span>
+  <div class="navlinks">
+    <a href="#now">Now</a><a href="#position">Positioning</a><a href="#avatar">Avatar</a>
+    <a href="#ascension">Ascension</a><a href="#pillars">Pillars</a><a href="#voice">Voice</a>
+    <a href="#offers">Offers</a><a href="#funnel">Funnel</a><a href="#assets">Assets</a>
+    <a href="#testing">Testing</a><a href="#plan">Plan</a><a href="#actions">Actions</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">Business Strategy &middot; Self-Authored Brand Lock</span>
+  <h1>Sell the symptom. Reveal the diagnosis. <em>Own the category.</em></h1>
+  <p>Nijah Almond Coaching &amp; Consultancy helps high-achieving executive women close the Identity Gap between the life they built and the life they actually want. This is the full plan: the locked positioning, the ascension stack, the content engine, the offer, and the exact moves to validate it with real women.</p>
+  <div class="stamp">Updated June 21, 2026 &middot; Flagship: The Next Chapter Experience&trade;, powered by GRIT&trade;</div>
+</div></header>
+
+<!-- WHAT CHANGED -->
+<section class="sec-white"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The shift, locked today</span><h2>What changed, and why it matters</h2>
+    <p>A full offer-architecture session sharpened the brand from a coaching offer into a category. Five decisions now anchor everything.</p></div>
+  <div class="two">
+    <div><h4>From offer to category</h4><p>This is no longer "career coaching for stuck women." It is the home of <b>The Identity Gap</b>, a category Nijah can own the way Brené Brown owns vulnerability. The flagship is <b>The Next Chapter Experience&trade;</b>, the method inside it stays <b>GRIT&trade;</b>. Sell the outcome, keep the IP.</p></div>
+    <div><h4>Sell the symptom, reveal the diagnosis</h4><p>Lead the free funnel with the words she uses at 2am: the Success Threshold and Identity Exhaustion. Reveal the Identity Gap once she is in. Protect the deeper IP for the paid coaching. The front end answers "Why do I feel this way?" The coaching answers "How do I transform?"</p></div>
+  </div>
+</div></section>
+
+<!-- NOW -->
+<section class="sec-cream" id="now"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Where it stands</span><h2>The honest starting line</h2></div>
+  <div class="stat-grid">
+    <div class="stat"><div class="k">Stage</div><div class="v">Pre-revenue</div><div class="s">Brand just sharpened, assets building</div></div>
+    <div class="stat"><div class="k">Founding clients to enroll</div><div class="v">5</div><div class="s">At $1,500-$2,500 to validate</div></div>
+    <div class="stat"><div class="k">Near-term goal</div><div class="v">5 / month</div><div class="s">Then raise to $3K-$10K as proof builds</div></div>
+    <div class="stat"><div class="k">The bottleneck</div><div class="v">Reach + proof</div><div class="s">Audience and real case studies</div></div>
+  </div>
+</div></section>
+
+<!-- POSITIONING -->
+<section class="sec-white" id="position"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Positioning</span><h2>The statement everything maps to</h2></div>
+  <div class="pos-box">
+    <div class="tag">Locked positioning</div>
+    <p>I help high-achieving executive women navigate the identity shift that happens when success no longer feels fulfilling, so they can gain the clarity, confidence, and self-trust to decide what is next, from truth instead of fear.</p>
+  </div>
+  <div class="pos-box" style="background:var(--white);border-color:rgba(7,59,69,.12)">
+    <div class="tag" style="color:var(--teal-mid)">The 12-week promise</div>
+    <p>In 12 weeks, you move from feeling stuck between who you have been and who you are becoming to a clear vision, renewed self-trust, and an aligned path into your next chapter.</p>
+  </div>
+  <div class="two" style="margin-top:30px">
+    <div><h4>The category to own</h4><p>The Identity Gap: the distance between the woman she became to succeed and the woman she actually wants to be. When people hear "successful but unfulfilled," they should think Identity Gap.</p></div>
+    <div><h4>What we are NOT</h4>
+      <div class="notlist">
+        <div>Not <b>productivity</b></div><div>Not <b>leadership skills</b></div>
+        <div>Not <b>mindset</b> coaching</div><div>Not <b>burnout</b> recovery</div>
+        <div>Not <b>therapy</b>-adjacent</div><div>Not <b>another framework</b></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- AVATAR -->
+<section class="sec-blush" id="avatar"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The avatar</span><h2>One woman, named precisely</h2>
+    <p>She is not buying change. She has already proven she is brave. She is buying self-trust and certainty about what is next.</p></div>
+  <div class="av-grid">
+    <div>
+      <table class="av-table">
+        <tr><td>Age</td><td>38 to 55</td></tr>
+        <tr><td>Income</td><td>$150K+ ($100K floor)</td></tr>
+        <tr><td>Role</td><td>Director, VP, SVP, Executive</td></tr>
+        <tr><td>External reality</td><td>Successful career, stable finances</td></tr>
+        <tr><td>Internal reality</td><td>Trapped, disconnected, restless</td></tr>
+        <tr><td>The decision</td><td>Reinvent or recommit</td></tr>
+        <tr><td>Deepest fear</td><td>Wasted potential, not failure. "How many years do I have left to build a life that feels like mine?"</td></tr>
+        <tr><td>Secret thought</td><td>"I should be grateful, so why am I unhappy?"</td></tr>
+        <tr><td>What she really lacks</td><td>Self-trust, not courage</td></tr>
+      </table>
+    </div>
+    <div class="ba">
+      <div class="col before"><h4>Before</h4><ul>
+        <li>Successful but disconnected</li>
+        <li>Constantly second-guessing</li>
+        <li>Guilty for wanting more</li>
+        <li>Unsure what comes next</li>
+        <li>Living old definitions of success</li>
+      </ul></div>
+      <div class="col after"><h4>After</h4><ul>
+        <li>Reconnected to herself</li>
+        <li>Clear on what she wants</li>
+        <li>Confident in her next chapter</li>
+        <li>Deciding without replay</li>
+        <li>Living from alignment</li>
+      </ul></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ASCENSION / IP STACK -->
+<section class="sec-teal" id="ascension"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The ascension stack</span><h2 style="color:#fff">How belief is built, in sequence</h2>
+    <p>This is the spine. Every post, email, page, and offer maps to a layer. The top layers are the free funnel. The protected layers are the paid coaching.</p></div>
+  <div class="ladder-steps">
+    <div class="lstep"><div class="lname"><small>The symptom / hook</small>The Success Threshold&trade;</div><div class="ljob">"You did everything right. So why does something still feel off?" Explains why now.</div></div>
+    <div class="lstep"><div class="lname"><small>Front-end language</small>Identity Exhaustion&trade;</div><div class="ljob">What she searches instead of "identity gap." Burnout is too much doing. This is too much performing.</div></div>
+    <div class="lstep"><div class="lname"><small>The diagnosis</small>The Identity Gap&trade;</div><div class="ljob">The root, and the category. Revealed once she is in, not led with.</div></div>
+    <div class="lstep protected"><div class="lname"><small>The villain (protected)</small>The Performance Trap&trade;</div><div class="ljob">"My worth comes from achievement." Taught inside the coaching, not the funnel.</div></div>
+    <div class="lstep protected"><div class="lname"><small>The hidden cost (protected)</small>Self-Abandonment</div><div class="ljob">What the gap actually costs. A coaching-level realization.</div></div>
+    <div class="lstep protected"><div class="lname"><small>The method (protected)</small>GRIT&trade;</div><div class="ljob">Gap, Reality, Identity, Truth. The proprietary engine inside the program.</div></div>
+    <div class="lstep"><div class="lname"><small>The bridge / real outcome</small>Self-Trust</div><div class="ljob">Not confidence. "I know what is true for me." The bridge from awareness to action.</div></div>
+    <div class="lstep"><div class="lname"><small>The decision</small>Reinvent or Recommit&trade;</div><div class="ljob">The one decision she is paying to make, from truth not fear.</div></div>
+    <div class="lstep"><div class="lname"><small>The transformation</small>The Self-Authored Woman&trade;</div><div class="ljob">The movement and destination. From good daughter to author of her own life.</div></div>
+    <div class="lstep"><div class="lname"><small>The outcome</small>The Next Chapter&trade;</div><div class="ljob">Career, relationships, purpose, legacy. What she is actually buying.</div></div>
+  </div>
+  <p class="layernote">Two emotional layers sit under all of it: Grief (mourning the dream chased for 20 years) and Permission ("You are allowed to outgrow a life you once wanted").</p>
+</div></section>
+
+<!-- PILLARS -->
+<section class="sec-cream" id="pillars"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Content pillars</span><h2>Five worlds, sequenced to convert</h2>
+    <p>These map onto the ascension stack and move a reader from attention to buyer. Plan the weekly batch across all five.</p></div>
+  <div class="pillars">
+    <div class="pillar"><div class="pn">Pillar 1</div><h4>Success &ne; Fulfillment</h4><p>Why achievement stops feeling enough. The promotion that changed nothing. The good-daughter cost.</p><div class="job">Awareness</div></div>
+    <div class="pillar"><div class="pn">Pillar 2</div><h4>The Success Threshold</h4><p>Signs you have outgrown your chapter. The crossroads no one names.</p><div class="job">Curiosity</div></div>
+    <div class="pillar"><div class="pn">Pillar 3</div><h4>The Identity Gap</h4><p>You do not have a clarity problem. Identity exhaustion vs burnout.</p><div class="job">Diagnosis</div></div>
+    <div class="pillar"><div class="pn">Pillar 4</div><h4>Reinvent or Recommit</h4><p>How to know it is time. Staying from alignment vs fear. The decision she avoids.</p><div class="job">Demand</div></div>
+    <div class="pillar"><div class="pn">Pillar 5</div><h4>The Self-Authored Woman</h4><p>Redefining success. Permission to want more. A life that feels like yours.</p><div class="job">Aspiration</div></div>
+  </div>
+  <div class="formula">Each post does one move: <span>SEE</span> feel understood &rarr; <span>DIAGNOSE</span> reveal the gap &rarr; <span>DECIDE</span> move toward reinvent or recommit</div>
+  <div class="two" style="margin-top:34px">
+    <div><h4>Belief logic</h4><p>Every piece installs one belief: B1 believe in Nijah, B2 believe in the vehicle (GRIT / Next Chapter Experience), B3 believe a woman like me can do it. Pillars 1-3 build B1 and B2. At least one post per batch must sit in pillar 4 or 5 and build B3 with real client proof, or the audience believes in Nijah but not in themselves. That is the gap between follower and buyer.</p></div>
+    <div><h4>Channel priority</h4><p>LinkedIn is channel #1. Podcast guesting is #2. YouTube is #3. Substack Notes and the newsletter feed the top of funnel. Lead with lived, cinematic specifics ("Third floor. Budget review. Slides I had seen seventeen times.") not "high-performing women often feel."</p></div>
+  </div>
+</div></section>
+
+<!-- VOICE -->
+<section class="sec-white" id="voice"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Words &amp; phrases</span><h2>The language that does the work</h2>
+    <p>Signature lines to repeat until they are hers in the market. One thread per piece. Short, declarative, truth-forward.</p></div>
+  <div class="phrases">
+    <div class="phrase">You did everything right. So why does something still feel off?</div>
+    <div class="phrase">You are not burned out. You are identity-exhausted.</div>
+    <div class="phrase">The real question is not stay or leave. It is reinvent or recommit.</div>
+    <div class="phrase">You are allowed to outgrow a life you once wanted.</div>
+    <div class="phrase">You cannot optimize your way out of an identity problem.</div>
+    <div class="phrase">Stop performing the woman who got you here.</div>
+    <div class="phrase">You do not have a decision problem. You have an identity problem.</div>
+    <div class="phrase">Become the author of your own life again.</div>
+    <div class="phrase">A life that feels as true as it looks successful.</div>
+  </div>
+  <div class="wordrow">
+    <div class="col use"><h4>Use with intent</h4>alignment, clarity, identity, self-trust, reinvent, recommit, self-authored, next chapter, performance, truth, certainty, grief, permission. Purpose and journey are now allowed for this body of work.</div>
+    <div class="col lose"><h4>Still banned</h4>hustle, motivation, mindset, empower. Also avoid vague promises like "discover your authentic self." Name the elephant: "the identity crisis success never prepared you for."</div>
+  </div>
+  <div class="two" style="margin-top:30px">
+    <div><h4>Content direction</h4><p>Lead from Nijah's lived story so the reader sees herself through her, not just learns from her. Open loops, sustain them, close them with the exact promised truth. No pivot mid-piece. Sell the symptom in public, reveal the diagnosis inside.</p></div>
+    <div><h4>The hook to test as core message</h4><p>"You do not need another leadership program. You do not need to push harder. The woman who created your success may not be the woman you want to become. In the GRIT Method, we close that gap, because you cannot optimize your way out of an identity problem."</p></div>
+  </div>
+</div></section>
+
+<!-- OFFERS -->
+<section class="sec-cream" id="offers"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The offer ladder</span><h2>Free to flagship to private</h2>
+    <p>Each rung lowers risk and raises trust. The take-home artifacts make the transformation tangible: a personal vision, a decision framework she trusts, a keep-and-release list, an Identity Blueprint, and a 90-day aligned plan.</p></div>
+  <div class="rung free"><div class="name">The Identity Reset&trade;</div><div class="price">Free</div><div class="desc">9-day email course: "The 9 Mistakes Successful Women Make When They've Outgrown the Life They Built." Awareness and diagnosis. The new front door.</div></div>
+  <div class="rung free"><div class="name">Success Threshold Assessment&trade;</div><div class="price">Free</div><div class="desc">Names where she is: Success, Fracture, Identity Gap, or Decision Point. Plus the Identity Audit Workbook companion.</div></div>
+  <div class="rung free"><div class="name">Legacy Lounge</div><div class="price">Free</div><div class="desc">Community. Language, belief, identity disruption. Warming layer (when ready).</div></div>
+  <div class="rung"><div class="name">The Success Threshold roundtable / workshop</div><div class="price">Free to $97</div><div class="desc">Small live room to validate the message and create Clarity Conversations.</div></div>
+  <div class="rung core"><div class="name">The Next Chapter Experience&trade;</div><div class="price">$1,500-$2,500 founding, then $3K-$10K</div><div class="desc">12-week flagship powered by GRIT&trade;. Identity leadership for women who have outgrown their success. Reinvent or recommit, from truth.</div></div>
+  <div class="rung high"><div class="name">Identity Reconstruction VIP</div><div class="price">$6,000-$10,000</div><div class="desc">Private. Weekly 1:1, priority access, custom strategy, 90-day plan.</div></div>
+</div></section>
+
+<!-- FUNNEL -->
+<section class="sec-white" id="funnel"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The funnel</span><h2>How a stranger becomes a client</h2>
+    <p>One direction of travel. Symptom on the outside, diagnosis on the inside, decision at the point of sale.</p></div>
+  <div class="funnel">
+    <div class="fstep s1"><div class="ft">Organic content (the symptom)</div><div class="fd">LinkedIn, Notes, podcasts. Success Threshold + Identity Exhaustion language.</div></div>
+    <div class="farrow">&darr;</div>
+    <div class="fstep s2"><div class="ft">The Identity Reset&trade; + Assessment</div><div class="fd">9-day email course and Success Threshold Assessment capture and diagnose.</div></div>
+    <div class="farrow">&darr;</div>
+    <div class="fstep s3"><div class="ft">Workbook + nurture</div><div class="fd">Identity Audit Workbook and email sequence build belief and self-recognition.</div></div>
+    <div class="farrow">&darr;</div>
+    <div class="fstep s4"><div class="ft">Roundtable &rarr; Clarity Conversation</div><div class="fd">The decision point. Reinvent or recommit, named out loud.</div></div>
+    <div class="farrow">&darr;</div>
+    <div class="fstep s5"><div class="ft">Next Chapter Experience &rarr; VIP</div><div class="fd">The transformation, then the deeper relationship.</div></div>
+  </div>
+</div></section>
+
+<!-- ASSETS -->
+<section class="sec-blush" id="assets"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The asset engine</span><h2>Built, ready, and next</h2>
+    <p>The funnel is not theoretical. Here is what is live, what is ready to run, and what to build next, in order.</p></div>
+  <div class="asset-grid">
+    <div class="asset"><span class="badge b-live">Live</span><h4>About page</h4><p>Proof-of-concept story with the Mira assistant. Cross-linked to the workbook. Deployed on Vercel.</p></div>
+    <div class="asset"><span class="badge b-live">Live</span><h4>Identity Audit Workbook</h4><p>Nine-tool interactive workbook, companion to the email course. Dark mode, self-building Identity Map, autosave, locked Next Chapter finale, Mira chat. Live on Vercel.</p></div>
+    <div class="asset"><span class="badge b-live">Live</span><h4>Asset &amp; Brand Hub</h4><p>Private dashboard: every asset, a status tracker, and the full branding kit. Password-gated and noindex.</p></div>
+    <div class="asset"><span class="badge b-build">In progress</span><h4>The Identity Reset&trade; email course</h4><p>9-day course finalized with its workbook companion live. Remaining: wire the opt-in in Kit (ConvertKit) and add the capture URL. This is the priority build.</p></div>
+    <div class="asset"><span class="badge b-build">Ready to use</span><h4>Newsletter + Notes systems</h4><p>Full template library, 12-week idea engine, and Stack 30 daily Note prompts (repurposable to tweets and threads).</p></div>
+    <div class="asset"><span class="badge b-next">Build next</span><h4>Success Threshold Assessment&trade;</h4><p>Four outcomes: Success, Fracture, Identity Gap, Decision Point. The diagnostic entry point.</p></div>
+    <div class="asset"><span class="badge b-next">Deferred</span><h4>Sales page, webinar, YouTube</h4><p>Do not touch until the email course is done and validated with real conversations. Take-home artifacts (Truth Audit, Identity Blueprint) build with the curriculum.</p></div>
+  </div>
+</div></section>
+
+<!-- TESTING GROUND -->
+<section class="sec-teal" id="testing"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The testing ground</span><h2 style="color:#fff">Validate with real women before you scale</h2>
+    <p>The closing directive from the strategy: stop building frameworks, finish the entry course, then prove it in conversation. Signal first, scale second.</p></div>
+  <div class="test-grid">
+    <div class="test"><h4><span>01</span> Content signal</h4><p>Write ~10 LinkedIn posts from the 5 pillars. Watch which lines, hooks, and pillars get saves, DMs, and recognition. Double down on what lands.</p></div>
+    <div class="test"><h4><span>02</span> Discovery conversations</h4><p>Run 15 research conversations with real ICP women. Listen, do not pitch. Capture her exact words. Confirm the symptom language and the reinvent-or-recommit decision.</p></div>
+    <div class="test"><h4><span>03</span> The Success Threshold roundtable</h4><p>Host one small free workshop. Test the message live, watch the room, and create Clarity Conversations.</p></div>
+    <div class="test"><h4><span>04</span> Founding cohort</h4><p>Enroll 5 founding clients at $1,500-$2,500. Deliver, document every transformation, and turn results into the proof that raises the price.</p></div>
+  </div>
+</div></section>
+
+<!-- 90 DAY PLAN -->
+<section class="sec-cream" id="plan"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The 90-day plan</span><h2>Sequence beats effort</h2>
+    <p>Finish the front door, prove the message, enroll the founders. In that order.</p></div>
+  <div class="phase"><div class="ph">Phase 1<small>Days 1-30 &middot; Finish + reach</small></div>
+    <ul><li>Finish The Identity Reset&trade; 9-day email course and wire it in Kit.</li><li>Post the 10 pillar posts on LinkedIn. Track signal, not likes.</li><li>Open Clarity Conversation booking and make it easy to find.</li><li>Drive the assessment and workbook as the single call to action.</li></ul></div>
+  <div class="phase"><div class="ph">Phase 2<small>Days 31-60 &middot; Prove</small></div>
+    <ul><li>Run 15 discovery conversations. Listen and capture her words.</li><li>Host the first Success Threshold roundtable.</li><li>Build the Success Threshold Assessment as the diagnostic entry.</li><li>Start the weekly newsletter as the authority and nurture layer.</li></ul></div>
+  <div class="phase"><div class="ph">Phase 3<small>Days 61-90 &middot; Enroll</small></div>
+    <ul><li>Enroll 5 founding clients into The Next Chapter Experience&trade; at $1,500-$2,500.</li><li>Deliver and document every transformation into case studies.</li><li>Raise the price toward $3K-$10K as proof accumulates.</li><li>Set the monthly rhythm: content, roundtable, conversations, enroll, deliver, capture proof.</li></ul></div>
+</div></section>
+
+<!-- ACTION ITEMS -->
+<section class="sec-white" id="actions"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Your action items</span><h2>What to do, in priority order</h2>
+    <p>The short list. Do the NOW items before anything new gets built.</p></div>
+  <div class="actions">
+    <div class="act"><div class="box"></div><div class="txt"><b>Finish The Identity Reset&trade; 9-day email course</b> and wire it in Kit. Do not touch sales page, webinar, assessment, or YouTube until this is done.</div><div class="pri p-now">Now</div></div>
+    <div class="act"><div class="box"></div><div class="txt"><b>Write 10 LinkedIn posts</b> from the 5 pillars and post them. Watch for signal.</div><div class="pri p-now">Now</div></div>
+    <div class="act"><div class="box"></div><div class="txt"><b>Run 15 discovery conversations</b> with ICP women. Listen, do not pitch.</div><div class="pri p-soon">Soon</div></div>
+    <div class="act"><div class="box"></div><div class="txt"><b>Host one Success Threshold roundtable</b> or free workshop.</div><div class="pri p-soon">Soon</div></div>
+    <div class="act"><div class="box"></div><div class="txt"><b>Build the Success Threshold Assessment&trade;</b> (Success / Fracture / Identity Gap / Decision Point).</div><div class="pri p-soon">Soon</div></div>
+    <div class="act"><div class="box"></div><div class="txt"><b>Enroll 5 founding clients</b> at $1,500-$2,500 into The Next Chapter Experience&trade;.</div><div class="pri p-then">Then</div></div>
+    <div class="act"><div class="box"></div><div class="txt"><b>Document every founding client</b> into a written case study and testimonial.</div><div class="pri p-then">Then</div></div>
+    <div class="act"><div class="box"></div><div class="txt"><b>Confirm channel priority:</b> LinkedIn first, podcast guesting second, YouTube third.</div><div class="pri p-then">Then</div></div>
+    <div class="act"><div class="box"></div><div class="txt"><b>Build take-home artifacts</b> (Truth Audit&trade;, Identity Blueprint&trade;) with the curriculum.</div><div class="pri p-then">Later</div></div>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="cta"><div class="wrap">
+  <span class="eyebrow">The focus</span>
+  <h2>Finish the front door. Prove it in conversation. <em>Then scale.</em></h2>
+  <p>The category is yours to own. The IP stack, the pillars, the offer, and the funnel are set. The next 90 days are about reach, proof, and five founding clients. Stop performing. Start becoming.</p>
+</div></section>
+
+<footer>© 2026 Nijah Almond Coaching &amp; Consultancy &middot; Internal business strategy &middot; Self-Authored Brand Lock, June 21 2026</footer>
+
+<script>
+(function(){
+  var K='biz-strategy-state-v1';
+  var st={done:{},assets:{}};try{var s=JSON.parse(localStorage.getItem(K));if(s){st=s;st.done=st.done||{};st.assets=st.assets||{}}}catch(e){}
+  function save(){try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}
+  document.querySelectorAll('#actions .act').forEach(function(a,i){
+    if(st.done[i])a.classList.add('done');
+    var box=a.querySelector('.box');
+    if(box)box.addEventListener('click',function(){a.classList.toggle('done');st.done[i]=a.classList.contains('done');save();});
+  });
+  var ORDER=['b-live','b-build','b-next','b-idea'],LBL={'b-live':'Live','b-build':'In progress','b-next':'Build next','b-idea':'Idea'};
+  document.querySelectorAll('#assets .asset').forEach(function(a,i){
+    var b=a.querySelector('.badge');if(!b)return;
+    if(st.assets[i]){ORDER.forEach(function(c){b.classList.remove(c)});b.classList.add(st.assets[i]);b.textContent=LBL[st.assets[i]];}
+    b.title='Click to change status';
+    b.addEventListener('click',function(){
+      var cur=ORDER.filter(function(c){return b.classList.contains(c)})[0]||'b-live';
+      var nxt=ORDER[(ORDER.indexOf(cur)+1)%ORDER.length];
+      ORDER.forEach(function(c){b.classList.remove(c)});b.classList.add(nxt);b.textContent=LBL[nxt];
+      st.assets[i]=nxt;save();
+    });
+  });
+})();
+</script>
+</body>
+</html>

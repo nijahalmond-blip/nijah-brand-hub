@@ -32,6 +32,8 @@
   .nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
   .jump{display:flex;align-items:center;gap:8px}
   .jump select{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--teal);background:var(--amber);border:none;border-radius:8px;padding:9px 12px;cursor:pointer;max-width:200px}
+  .jump a.jumpgo{font-size:13px;font-weight:700;color:rgba(255,255,255,.35);text-decoration:none;padding:9px 13px;border:1px solid rgba(255,255,255,.2);border-radius:8px;pointer-events:none;white-space:nowrap}
+  .jump a.jumpgo.ready{color:var(--teal);background:#fff;border-color:#fff;pointer-events:auto}
 
   .hero{background:var(--teal);color:#fff;padding:22px 22px 34px}
   .hero .inner{max-width:1060px;margin:0 auto}
@@ -132,9 +134,11 @@
     <a href="#g-landing-funnels">Funnels</a>
     <a href="#g-site-brand">Site &amp; Brand</a>
     <a href="#branding">Branding Kit</a>
+    <a href="business-strategy.html" target="_blank" rel="noopener">Strategy &#8599;</a>
   </nav>
   <div class="jump">
     <select id="jumpSel"><option value="">Open a page…</option></select>
+    <a id="jumpGo" class="jumpgo" target="_blank" rel="noopener">Go &#8599;</a>
   </div>
 </div></div>
 
@@ -250,6 +254,7 @@
     ['Landing & Funnels','GRIT Run','https://grit-run.vercel.app','ship'],
     ['Landing & Funnels','GRIT Launchpad','https://grit-launchpad.vercel.app','dev'],
     ['Landing & Funnels','The Front End Brief','https://the-front-end-brief.vercel.app','ship'],
+    ['Site & Brand','Business Strategy (private)','business-strategy.html','ship'],
     ['Site & Brand','About Page','https://nijah-almond-about.vercel.app','ship'],
     ['Site & Brand','Tools Hub','https://tools-hub.vercel.app','ship'],
     ['Site & Brand','Mirror Method (app)','https://mirror-method.vercel.app','ship'],
@@ -310,7 +315,10 @@
       var o=document.createElement('option');o.value=it.url;o.textContent=it.name;sel.appendChild(o);
     });
   }
-  document.getElementById('jumpSel').onchange=function(){if(this.value){window.open(this.value,'_blank','noopener');this.value='';}};
+  (function(){var js=document.getElementById('jumpSel'),jg=document.getElementById('jumpGo');
+    js.onchange=function(){if(this.value){jg.href=this.value;jg.classList.add('ready');}else{jg.removeAttribute('href');jg.classList.remove('ready');}};
+    jg.addEventListener('click',function(){setTimeout(function(){js.value='';jg.removeAttribute('href');jg.classList.remove('ready');},100);});
+  })();
   document.querySelectorAll('.filter').forEach(function(f){f.onclick=function(){filter=f.getAttribute('data-f');document.querySelectorAll('.filter').forEach(function(x){x.classList.remove('on')});f.classList.add('on');render();}});
   document.getElementById('addBtn').onclick=function(){
     var n=document.getElementById('newName').value.trim();if(!n)return;var u=document.getElementById('newUrl').value.trim();
