@@ -219,6 +219,21 @@
   .tab:hover{background:rgba(255,255,255,.12);color:#fff}
   .tab.on{background:#F2B41A;color:#073B45}
   .pg-hidden{display:none !important}
+  /* logic tree */
+  .ladder{display:flex;flex-direction:column;gap:6px;max-width:640px;margin:0 auto 6px}
+  .rung{border-radius:12px;padding:15px 20px;color:#fff}
+  .rung b{font-family:'Cormorant Garamond',serif;font-size:22px;display:block;line-height:1.1}
+  .rung span{font-size:13px;opacity:.85}
+  .rung.r1{background:#0C6373}.rung.r2{background:#085866}.rung.r3{background:#073B45}.rung.r4{background:#06303a}
+  .arr{text-align:center;color:#F2B41A;font-size:18px;line-height:1}
+  .lt-side{background:#F6E4DA;border-left:4px solid #F2B41A;border-radius:10px;padding:16px 18px;font-size:14.5px;line-height:1.6;margin:18px 0}
+  .lt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:8px}
+  .lt-card{background:#fff;border:1px solid rgba(7,59,69,.1);border-radius:12px;padding:18px 20px}
+  .lt-prog{font-family:'Cormorant Garamond',serif;font-size:21px;color:#073B45;font-weight:600;margin-bottom:10px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .lt-prog .tier{font-family:Inter,sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#085866;background:#F6E4DA;padding:3px 8px;border-radius:20px;font-weight:600}
+  .lt-feed{font-size:14px;color:rgba(42,31,26,.82);line-height:1.55;margin-bottom:8px}
+  .lt-do{font-size:14px;color:rgba(42,31,26,.7);line-height:1.55}
+  .lt-feed b,.lt-do b{color:#073B45}
   /* pages directory */
   .dir{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:26px}
   .dir-group h4{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#F2B41A;font-weight:700;margin-bottom:8px}
@@ -261,6 +276,7 @@
     <button class="tab" data-pg="offers">Offers &amp; Funnel</button>
     <button class="tab" data-pg="assets">Assets &amp; Pages</button>
     <button class="tab" data-pg="plan">Plan &amp; Map</button>
+    <button class="tab" data-pg="logic">Logic Tree</button>
     <button class="tab" data-pg="actions">Actions</button>
   </div>
 </div></nav>
@@ -558,6 +574,57 @@
   </div>
 </div></section>
 
+<!-- LOGIC TREE -->
+<section class="sec-cream" id="logic"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The logic tree</span><h2>How to utilize every asset across the ascension</h2>
+    <p>Every tool has one job: move her to the next rung. Here is the ascension, and the exact assets that feed each program.</p></div>
+
+  <div class="ladder">
+    <div class="rung r1"><b>WHISPER</b><span>Awareness &amp; entry. She recognizes the gap and raises her hand.</span></div>
+    <div class="arr">&darr;</div>
+    <div class="rung r2"><b>Identity Gap Workshop &rarr; GRIT</b><span>Core transformation. She closes the gap over 12 weeks.</span></div>
+    <div class="arr">&darr;</div>
+    <div class="rung r3"><b>SPARKLE</b><span>Expansion. She embodies and amplifies the new identity.</span></div>
+    <div class="arr">&darr;</div>
+    <div class="rung r4"><b>ASCEND</b><span>Legacy. She leads, mentors, and builds what is next.</span></div>
+  </div>
+  <p class="lt-side"><b>Parallel + continuity:</b> Identity Reconstruction VIP runs alongside as the private, high-touch path. Legacy Lounge Experience (membership), The Boss Journal (cross-sell), and The GRIT Reset (downsell) keep everyone moving and earning between rungs.</p>
+
+  <h3 class="stage-h">What feeds each program, and how to use it</h3>
+  <div class="lt-cards">
+    <div class="lt-card"><div class="lt-prog">WHISPER <span class="tier">Free / entry</span></div>
+      <div class="lt-feed"><b>Use:</b> Identity Gap Score, Identity Analyzer, Identity Leak, Sparkle Scan, GRIT Scorecard, Mirror Method, the 9-day Identity Reset + Workbook, Free Hub, pillar content.</div>
+      <div class="lt-do"><b>How:</b> Every post and assessment ends in an email capture, then invites her into the Legacy Lounge. The 9-day course nurtures her until she is ready to pay.</div></div>
+    <div class="lt-card"><div class="lt-prog">Identity Gap Workshop <span class="tier">$97 bridge</span></div>
+      <div class="lt-feed"><b>Use:</b> Legacy Lounge, email course Day 8, the Workbook, Close the Gap landing.</div>
+      <div class="lt-do"><b>How:</b> Promote inside the community and at the end of the course. The workshop's only job is to convert into GRIT.</div></div>
+    <div class="lt-card"><div class="lt-prog">GRIT <span class="tier">$2.5k-4.5k core</span></div>
+      <div class="lt-feed"><b>Use:</b> Identity Gap Workshop, Clarity Conversation (Calendly), GRIT Scorecard, the Workbook, GRIT Run landing.</div>
+      <div class="lt-do"><b>How:</b> Workshop attendees book a Clarity Conversation; the Scorecard qualifies readiness; the conversation closes the 12-week cohort.</div></div>
+    <div class="lt-card"><div class="lt-prog">SPARKLE <span class="tier">Expansion</span></div>
+      <div class="lt-feed"><b>Use:</b> GRIT graduates, case-study / testimonial capture, The Boss Journal.</div>
+      <div class="lt-do"><b>How:</b> At GRIT graduation, invite her into SPARKLE to embody and amplify. Document every transformation as proof that feeds WHISPER.</div></div>
+    <div class="lt-card"><div class="lt-prog">ASCEND <span class="tier">Legacy / elite</span></div>
+      <div class="lt-feed"><b>Use:</b> SPARKLE alumni, VIP candidates.</div>
+      <div class="lt-do"><b>How:</b> Top performers ascend into the leadership and legacy tier. This is where price and access peak.</div></div>
+    <div class="lt-card"><div class="lt-prog">Identity Reconstruction VIP <span class="tier">$6k-10k private</span></div>
+      <div class="lt-feed"><b>Use:</b> Clarity Conversation (high-intent), the Workbook as pre-work.</div>
+      <div class="lt-do"><b>How:</b> For women who want it done privately and fast. Offered on the Clarity Conversation when fit and budget are there.</div></div>
+    <div class="lt-card"><div class="lt-prog">Continuity <span class="tier">recurring + add-ons</span></div>
+      <div class="lt-feed"><b>Use:</b> Legacy Lounge Experience (membership), The Boss Journal (cross-sell), The GRIT Reset (downsell).</div>
+      <div class="lt-do"><b>How:</b> Membership keeps alumni engaged monthly; the Journal cross-sells to everyone; the Reset catches those who say no to GRIT.</div></div>
+  </div>
+
+  <h3 class="stage-h">Assets to modify so they route to the next program</h3>
+  <div class="actions">
+    <div class="act"><div class="box"></div><div class="txt"><b>Every free assessment:</b> add one consistent next step — capture email, then invite to the Legacy Lounge. Right now they end in six different places.</div><div class="pri p-now">Fix</div></div>
+    <div class="act"><div class="box"></div><div class="txt"><b>The 9-day course (Day 8) + Workbook CTA:</b> route to the Identity Gap Workshop / Clarity Conversation, not just "keep the workbook."</div><div class="pri p-now">Fix</div></div>
+    <div class="act"><div class="box"></div><div class="txt"><b>Workshop page:</b> make its single exit a Clarity Conversation booking that leads into GRIT.</div><div class="pri p-soon">Fix</div></div>
+    <div class="act"><div class="box"></div><div class="txt"><b>GRIT graduation:</b> build in the SPARKLE invite + testimonial capture as a step, so the ascension continues automatically.</div><div class="pri p-soon">Fix</div></div>
+    <div class="act"><div class="box"></div><div class="txt"><b>Consolidate the front door:</b> pick ONE primary assessment; make the rest feeders or A/B tests so the path does not fork six ways.</div><div class="pri p-now">Fix</div></div>
+  </div>
+</div></section>
+
 <!-- ACTION ITEMS -->
 <section class="sec-white" id="actions"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Your action items</span><h2>What to do, in priority order</h2>
@@ -586,7 +653,7 @@
 
 <script>
 (function(){
-  var PAGES={overview:['overview-hero','shift','now'],positioning:['position','avatar','ascension'],brand:['pillars','voice'],offers:['offers','funnel'],assets:['assets','pages'],plan:['testing','plan','map'],actions:['actions','cta']};
+  var PAGES={overview:['overview-hero','shift','now'],positioning:['position','avatar','ascension'],brand:['pillars','voice'],offers:['offers','funnel'],assets:['assets','pages'],plan:['testing','plan','map'],logic:['logic'],actions:['actions','cta']};
   var all=[];Object.keys(PAGES).forEach(function(k){all=all.concat(PAGES[k]);});
   function show(pg){
     if(!PAGES[pg])pg='overview';
