@@ -210,6 +210,14 @@
   .map-note{background:#F6E4DA;border-left:4px solid #F2B41A;border-radius:10px;padding:18px 20px;margin:26px 0;font-size:15px;line-height:1.6}
   .stage-h{font-family:'Cormorant Garamond',serif;font-size:22px;color:#073B45;font-weight:600;margin:28px 0 8px}
   @media(max-width:600px){.map-row{grid-template-columns:1fr;gap:4px}}
+  /* sticky tabbed header / multi-page nav */
+  nav{position:sticky;top:0;z-index:60;background:#073B45;border-bottom:1px solid rgba(255,255,255,.1)}
+  nav .wrap{display:flex;align-items:center;gap:14px;justify-content:space-between;flex-wrap:wrap}
+  .tabs{display:flex;gap:4px;flex-wrap:wrap;overflow-x:auto}
+  .tab{background:none;border:none;color:rgba(255,255,255,.82);font-family:Inter,sans-serif;font-size:12.5px;font-weight:600;padding:9px 12px;border-radius:7px;cursor:pointer;white-space:nowrap}
+  .tab:hover{background:rgba(255,255,255,.12);color:#fff}
+  .tab.on{background:#F2B41A;color:#073B45}
+  .pg-hidden{display:none !important}
   /* pages directory */
   .dir{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:26px}
   .dir-group h4{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#F2B41A;font-weight:700;margin-bottom:8px}
@@ -244,17 +252,19 @@
 </script>
 
 <nav><div class="wrap">
-  <a class="brand" href="index.html" style="text-decoration:none">Nijah Almond</a>
-  <div class="navlinks">
-    <a href="index.html" style="color:#F2B41A;font-weight:700">&#8592; Brand Hub</a>
-    <a href="#now">Now</a><a href="#position">Positioning</a><a href="#avatar">Avatar</a>
-    <a href="#ascension">Ascension</a><a href="#pillars">Pillars</a><a href="#voice">Voice</a>
-    <a href="#offers">Offers</a><a href="#funnel">Funnel</a><a href="#assets">Assets</a>
-    <a href="#testing">Testing</a><a href="#plan">Plan</a><a href="#pages">Pages</a><a href="#map">Map</a><a href="#actions">Actions</a>
+  <a class="brand" href="index.html" style="text-decoration:none;color:#fff;font-weight:700;white-space:nowrap">&#8592; Brand Hub</a>
+  <div class="tabs">
+    <button class="tab on" data-pg="overview">Overview</button>
+    <button class="tab" data-pg="positioning">Positioning</button>
+    <button class="tab" data-pg="brand">Brand</button>
+    <button class="tab" data-pg="offers">Offers &amp; Funnel</button>
+    <button class="tab" data-pg="assets">Assets &amp; Pages</button>
+    <button class="tab" data-pg="plan">Plan &amp; Map</button>
+    <button class="tab" data-pg="actions">Actions</button>
   </div>
 </div></nav>
 
-<header class="hero"><div class="wrap">
+<header class="hero" id="overview-hero"><div class="wrap">
   <span class="eyebrow">Business Strategy &middot; Self-Authored Brand Lock</span>
   <h1>Sell the symptom. Reveal the diagnosis. <em>Own the category.</em></h1>
   <p>Nijah Almond Coaching &amp; Consultancy helps high-achieving executive women close the Identity Gap between the life they built and the life they actually want. This is the full plan: the locked positioning, the ascension stack, the content engine, the offer, and the exact moves to validate it with real women.</p>
@@ -262,7 +272,7 @@
 </div></header>
 
 <!-- WHAT CHANGED -->
-<section class="sec-white"><div class="wrap">
+<section class="sec-white" id="shift"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">The shift, locked today</span><h2>What changed, and why it matters</h2>
     <p>A full offer-architecture session sharpened the brand from a coaching offer into a category. Five decisions now anchor everything.</p></div>
   <div class="two">
@@ -565,13 +575,30 @@
 </div></section>
 
 <!-- CTA -->
-<section class="cta"><div class="wrap">
+<section class="cta" id="cta"><div class="wrap">
   <span class="eyebrow">The focus</span>
   <h2>Finish the front door. Prove it in conversation. <em>Then scale.</em></h2>
   <p>The category is yours to own. The IP stack, the pillars, the offer, and the funnel are set. The next 90 days are about reach, proof, and five founding clients. Stop performing. Start becoming.</p>
 </div></section>
 
 <footer>© 2026 Nijah Almond Coaching &amp; Consultancy &middot; Internal business strategy &middot; Self-Authored Brand Lock, June 21 2026</footer>
+
+<script>
+(function(){
+  var PAGES={overview:['overview-hero','shift','now'],positioning:['position','avatar','ascension'],brand:['pillars','voice'],offers:['offers','funnel'],assets:['assets','pages'],plan:['testing','plan','map'],actions:['actions','cta']};
+  var all=[];Object.keys(PAGES).forEach(function(k){all=all.concat(PAGES[k]);});
+  function show(pg){
+    if(!PAGES[pg])pg='overview';
+    all.forEach(function(id){var el=document.getElementById(id);if(el)el.classList.add('pg-hidden');});
+    PAGES[pg].forEach(function(id){var el=document.getElementById(id);if(el)el.classList.remove('pg-hidden');});
+    document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('on',t.getAttribute('data-pg')===pg);});
+    try{history.replaceState(null,'','#'+pg);}catch(e){}
+    window.scrollTo(0,0);
+  }
+  document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){show(t.getAttribute('data-pg'));});});
+  show((location.hash||'').replace('#',''));
+})();
+</script>
 
 <script>
 (function(){
