@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Asset, Launch &amp; Brand Hub · Nijah Almond</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#073B45; --teal-mid:#085866; --teal-light:#0C6373; --amber:#F2B41A; --terracotta:#E37A7A;
+    --blush:#E8B7C5; --blush-light:#F6E4DA; --cream:#FBF4EE; --ink:#2A1F1A; --white:#fff;
+    --idea:#9A8FB0; --dev:#E0922E; --ship:#2E8B6F;
+    --serif:'Cormorant Garamond',Georgia,serif; --sans:'DM Sans',-apple-system,Segoe UI,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+
+  /* sticky header + grouped nav + quick open */
+  .bar{position:sticky;top:0;z-index:50;background:var(--teal);color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
+  .bar::after{content:"";display:block;height:4px;background:linear-gradient(90deg,var(--amber),var(--terracotta))}
+  .bar .row{max-width:1060px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 22px;flex-wrap:wrap}
+  .brandmark{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:18px;white-space:nowrap}
+  .brandmark img{width:26px;height:26px;border-radius:6px}
+  .nav{display:flex;gap:4px;flex:1;overflow-x:auto}
+  .nav a{color:rgba(255,255,255,.82);font-size:12px;font-weight:600;letter-spacing:.03em;text-decoration:none;padding:8px 11px;border-radius:7px;white-space:nowrap;transition:.15s}
+  .nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
+  .jump{display:flex;align-items:center;gap:8px}
+  .jump select{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--teal);background:var(--amber);border:none;border-radius:8px;padding:9px 12px;cursor:pointer;max-width:200px}
+
+  .hero{background:var(--teal);color:#fff;padding:22px 22px 34px}
+  .hero .inner{max-width:1060px;margin:0 auto}
+  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4vw,44px)}
+  .hero p{color:rgba(255,255,255,.8);max-width:62ch;font-size:14.5px;margin-top:4px}
+  .counts{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .count{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:10px 15px;min-width:108px}
+  .count b{display:block;font-family:var(--serif);font-size:26px;line-height:1}
+  .count span{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+
+  .wrap{max-width:1060px;margin:0 auto;padding:24px 22px 80px}
+  .controls{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+  .filter{background:#fff;border:1px solid rgba(7,59,69,.18);color:var(--teal);font-family:var(--sans);font-size:12.5px;font-weight:600;padding:9px 14px;border-radius:30px;cursor:pointer;transition:.15s}
+  .filter:hover{border-color:var(--amber)} .filter.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+  .add{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+  .add input{font-family:var(--sans);font-size:14px;padding:10px 12px;border:1px solid rgba(7,59,69,.2);border-radius:8px;min-height:42px}
+  .add input.name{width:180px} .add input.url{width:170px}
+  .add button{background:var(--amber);color:var(--teal);border:none;font-family:var(--sans);font-weight:700;font-size:13px;padding:10px 15px;border-radius:8px;cursor:pointer;min-height:42px}
+
+  .group h2{font-family:var(--serif);font-weight:600;font-size:25px;color:var(--teal);margin:34px 0 4px;scroll-margin-top:70px}
+  .group .ghint{font-size:12.5px;color:rgba(42,31,26,.5);margin-bottom:12px}
+  .item{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid rgba(7,59,69,.1);border-radius:12px;padding:13px 16px;margin:9px 0;flex-wrap:wrap}
+  .item .nm{font-weight:600;font-size:15px;color:var(--teal);flex:1;min-width:150px}
+  .item .nm .cat{display:block;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(42,31,26,.42);font-weight:500;margin-top:2px}
+  .item a.open{font-size:12px;font-weight:600;color:var(--teal-mid);text-decoration:none;border:1px solid rgba(7,59,69,.18);padding:7px 12px;border-radius:7px;white-space:nowrap}
+  .item a.open:hover{border-color:var(--amber);color:var(--amber)}
+  .pills{display:flex;gap:6px;flex-wrap:wrap}
+  .pill{font-family:var(--sans);font-size:11.5px;font-weight:600;padding:8px 12px;border-radius:30px;border:1px solid rgba(7,59,69,.2);background:#fff;color:rgba(42,31,26,.6);cursor:pointer;transition:.15s;min-height:36px}
+  .pill:hover{border-color:rgba(7,59,69,.4)}
+  .pill.on[data-s="idea"]{background:var(--idea);border-color:var(--idea);color:#fff}
+  .pill.on[data-s="dev"]{background:var(--dev);border-color:var(--dev);color:#fff}
+  .pill.on[data-s="ship"]{background:var(--ship);border-color:var(--ship);color:#fff}
+  .item.is-ship{border-left:4px solid var(--ship)} .item.is-dev{border-left:4px solid var(--dev)} .item.is-idea{border-left:4px solid var(--idea)}
+  .item.hide{display:none}
+  .del{background:none;border:none;color:rgba(42,31,26,.3);font-size:18px;cursor:pointer;padding:4px 6px} .del:hover{color:var(--terracotta)}
+
+  /* Branding kit */
+  .kit{margin-top:46px;scroll-margin-top:70px}
+  .kit > h2{font-family:var(--serif);font-weight:600;font-size:30px;color:var(--teal);border-top:2px solid rgba(7,59,69,.12);padding-top:30px}
+  .kit h3{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:700;margin:26px 0 14px}
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+  .sw{border-radius:12px;overflow:hidden;border:1px solid rgba(7,59,69,.1);background:#fff;cursor:pointer}
+  .sw .chip{height:74px} .sw .meta{padding:10px 12px} .sw .meta b{font-size:13px;display:block} .sw .meta span{font-size:12px;color:rgba(42,31,26,.55);font-variant-numeric:tabular-nums}
+  .type-card{background:#fff;border:1px solid rgba(7,59,69,.1);border-radius:12px;padding:22px 24px;margin-bottom:12px}
+  .type-card .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(42,31,26,.5)}
+  .type-card .serif-s{font-family:var(--serif);font-size:38px;color:var(--teal);line-height:1.1;margin:6px 0 2px}
+  .type-card .sans-s{font-family:var(--sans);font-size:24px;color:var(--ink);margin:6px 0 2px}
+  .type-card small{color:rgba(42,31,26,.55);font-size:13px}
+  .logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+  .logo-card{background:#fff;border:1px solid rgba(7,59,69,.1);border-radius:12px;padding:18px;text-align:center}
+  .logo-card.dark{background:var(--teal)} .logo-card.dark .cap{color:rgba(255,255,255,.7)}
+  .logo-card img{max-width:100%;max-height:120px;object-fit:contain;display:block;margin:0 auto 12px}
+  .logo-card .cap{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(42,31,26,.5);font-weight:600}
+  .logo-card a{font-size:11px;color:var(--teal-mid);text-decoration:none;display:inline-block;margin-top:6px}
+  .mascots{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+  .mascot-card{background:#fff;border:1px solid rgba(7,59,69,.1);border-radius:12px;padding:20px;text-align:center}
+  .mascot-card .mira-fig{width:90px;height:118px;margin:0 auto 10px;display:block}
+  .mascot-card img{width:150px;height:auto;border-radius:12px;display:block;margin:0 auto 10px;box-shadow:0 10px 28px rgba(7,59,69,.18)}
+  .mascot-card b{display:block;font-size:15px;color:var(--teal)} .mascot-card small{font-size:12.5px;color:rgba(42,31,26,.55)}
+
+  .foot{text-align:center;color:rgba(42,31,26,.5);font-size:12.5px;margin-top:44px}
+  .reset{background:none;border:1px solid rgba(7,59,69,.2);color:rgba(42,31,26,.6);font-size:11px;padding:6px 12px;border-radius:6px;cursor:pointer;margin-top:10px}
+  @media(max-width:620px){.add{margin-left:0;width:100%}.add input.name,.add input.url{width:100%}.jump select{max-width:150px}}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="row">
+  <div class="brandmark"><img src="favicon.svg" alt=""> Brand Hub</div>
+  <nav class="nav">
+    <a href="#g-free-assessments">Assessments</a>
+    <a href="#g-lead-magnets">Lead Magnets</a>
+    <a href="#g-programs-in-development">Programs</a>
+    <a href="#g-landing-funnels">Funnels</a>
+    <a href="#g-site-brand">Site &amp; Brand</a>
+    <a href="#branding">Branding Kit</a>
+  </nav>
+  <div class="jump">
+    <select id="jumpSel"><option value="">Open a page…</option></select>
+  </div>
+</div></div>
+
+<header class="hero"><div class="inner">
+  <h1>Asset, Launch &amp; Brand Hub</h1>
+  <p>Everything in one place. Set each item's status, jump to a section from the header, or open any page from the selector. Saved in this browser.</p>
+  <div class="counts">
+    <div class="count"><b id="c-ship">0</b><span>Shipped</span></div>
+    <div class="count"><b id="c-dev">0</b><span>In development</span></div>
+    <div class="count"><b id="c-idea">0</b><span>Ideas</span></div>
+    <div class="count"><b id="c-all">0</b><span>Total</span></div>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div class="controls">
+    <button class="filter on" data-f="all">All</button>
+    <button class="filter" data-f="idea">Ideas</button>
+    <button class="filter" data-f="dev">In development</button>
+    <button class="filter" data-f="ship">Shipped</button>
+    <div class="add">
+      <input class="name" id="newName" placeholder="New asset or idea...">
+      <input class="url" id="newUrl" placeholder="Link (optional)">
+      <button id="addBtn">+ Add</button>
+    </div>
+  </div>
+  <div id="board"></div>
+
+  <!-- ===== BRANDING KIT ===== -->
+  <section class="kit" id="branding">
+    <h2>Branding Kit</h2>
+
+    <h3>Colors</h3>
+    <div class="swatches" id="swatches"></div>
+
+    <h3>Typography</h3>
+    <div class="type-card">
+      <div class="lbl">Headings — Cormorant Garamond</div>
+      <div class="serif-s">Stop performing. Start becoming.</div>
+      <small>Cormorant Garamond · 500/600 · italic for emphasis</small>
+    </div>
+    <div class="type-card">
+      <div class="lbl">Body — DM Sans</div>
+      <div class="sans-s">Identity drives decision. Decision drives results.</div>
+      <small>DM Sans · 400/500/600/700</small>
+    </div>
+
+    <h3>Logos &amp; Symbols</h3>
+    <div class="logos">
+      <div class="logo-card"><img src="brand-wordmark.png" alt="Wordmark"><div class="cap">Wordmark (name)</div><a href="brand-wordmark.png" target="_blank">Open</a></div>
+      <div class="logo-card"><img src="brand-wordmark-casual.jpg" alt="Casual wordmark"><div class="cap">Casual wordmark</div><a href="brand-wordmark-casual.jpg" target="_blank">Open</a></div>
+      <div class="logo-card"><img src="brand-monogram.png" alt="NA monogram"><div class="cap">NA monogram</div><a href="brand-monogram.png" target="_blank">Open</a></div>
+      <div class="logo-card"><img src="brand-crown.jpg" alt="Crown"><div class="cap">Crown</div><a href="brand-crown.jpg" target="_blank">Open</a></div>
+      <div class="logo-card"><img src="brand-crown-sheet.png" alt="Crown color sheet"><div class="cap">Crown — color sheet</div><a href="brand-crown-sheet.png" target="_blank">Open</a></div>
+      <div class="logo-card dark"><img src="favicon.svg" alt="Brand symbol"><div class="cap">Symbol / favicon</div><a href="favicon.svg" target="_blank">Open</a></div>
+    </div>
+
+    <h3>Mascots</h3>
+    <div class="mascots">
+      <div class="mascot-card">
+        <svg class="mira-fig" viewBox="0 0 62 80" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="mira-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0C6373"/><stop offset="1" stop-color="#E8B7C5"/></linearGradient></defs>
+          <rect x="27" y="50" width="8" height="27" rx="4" fill="#085866"/>
+          <ellipse cx="31" cy="29" rx="28" ry="29" fill="#F2B41A"/>
+          <ellipse cx="31" cy="29" rx="22.5" ry="24" fill="url(#mira-g)"/>
+          <circle cx="23" cy="27" r="2.6" fill="#073B45"/><circle cx="39" cy="27" r="2.6" fill="#073B45"/>
+          <path d="M22 36 Q31 44 40 36" stroke="#073B45" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+          <path d="M17 17 q7 -5 13 -1" stroke="#fff" stroke-width="2" fill="none" opacity=".75" stroke-linecap="round"/>
+        </svg>
+        <b>Mira</b><small>The mirror guide. Used across the workbook and assistants.</small>
+      </div>
+      <div class="mascot-card">
+        <img src="brand-character.jpg" alt="Brand character mascot">
+        <b>The Character</b><small>Your Higgsfield brand character (soul). Used in content + editorial shoots.</small>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    Saved locally on this device. Live status detected 2026-06-21.
+    <br><button class="reset" id="resetBtn">Reset statuses to detected defaults</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var KEY='nijah-asset-tracker-v1';
+  var SEED=[
+    ['Free Assessments','Identity Gap Score','https://identitygapscore.com','ship'],
+    ['Free Assessments','Identity Analyzer','https://youridentitycode.com','ship'],
+    ['Free Assessments','Identity Leak Calculator','https://identity-leak-calc.vercel.app','ship'],
+    ['Free Assessments','Identity Leak','https://identity-leak.vercel.app','ship'],
+    ['Free Assessments','Identity Sparkle Scan','https://identity-sparkle-scan.vercel.app','ship'],
+    ['Free Assessments','GRIT Scorecard','https://grit-scorecard.vercel.app','ship'],
+    ['Free Assessments','Your Qualifier','https://your-qualifier.vercel.app','dev'],
+    ['Lead Magnets','One Big Idea (OBI)','https://obi-one-big-idea.vercel.app','ship'],
+    ['Lead Magnets','The Mirror Method (guide)','https://mirrormethod.nijahalmond.com','ship'],
+    ['Lead Magnets','Identity Audit Workbook','https://identity-audit-workbook.vercel.app','ship'],
+    ['Lead Magnets','The Identity Reset (9-day email course)','','ship'],
+    ['Lead Magnets','Confidence Detox','https://confidence-detox.vercel.app','ship'],
+    ['Lead Magnets','Lure Tool','https://lure-tool.vercel.app','ship'],
+    ['Lead Magnets','Assay Tool','https://assay-tool.vercel.app','ship'],
+    ['Lead Magnets','Nijah Free Hub','https://nijah-free-hub.vercel.app','ship'],
+    ['Programs (in development)','GRIT — the Identity Transformation System (12-week)','','dev'],
+    ['Programs (in development)','Identity Gap Workshop ($97)','','dev'],
+    ['Programs (in development)','Identity Reconstruction VIP','','idea'],
+    ['Programs (in development)','The GRIT Reset (downsell)','','idea'],
+    ['Programs (in development)','The Boss Journal (cross-sell)','','idea'],
+    ['Programs (in development)','Legacy Lounge Experience (membership)','','idea'],
+    ['Programs (in development)','Legacy Lounge (free community · Skool)','https://www.skool.com/the-legacy-lounge-free-7046/about?ref=4aecf50ea0e64eb0924b177d6890a1fb','ship'],
+    ['Landing & Funnels','Close the Gap','https://close-the-gap.vercel.app','ship'],
+    ['Landing & Funnels','Legacy Lounge Landing','https://legacy-lounge-landing.vercel.app','ship'],
+    ['Landing & Funnels','GRIT Run','https://grit-run.vercel.app','ship'],
+    ['Landing & Funnels','GRIT Launchpad','https://grit-launchpad.vercel.app','dev'],
+    ['Landing & Funnels','The Front End Brief','https://the-front-end-brief.vercel.app','ship'],
+    ['Site & Brand','About Page','https://nijah-almond-about.vercel.app','ship'],
+    ['Site & Brand','Tools Hub','https://tools-hub.vercel.app','ship'],
+    ['Site & Brand','Mirror Method (app)','https://mirror-method.vercel.app','ship'],
+    ['Site & Brand','Nijah Brand OS','https://nijah-brand-os.vercel.app','ship']
+  ];
+  var GROUPS=['Free Assessments','Lead Magnets','Programs (in development)','Landing & Funnels','Site & Brand','My Ideas'];
+  var COLORS=[['Deep Teal','#073B45'],['Teal Mid','#085866'],['Teal Light','#0C6373'],['Amber','#F2B41A'],['Terracotta','#E37A7A'],['Blush','#E8B7C5'],['Blush Light','#F6E4DA'],['Cream','#FBF4EE'],['Ink','#2A1F1A']];
+  function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+  function id(n,u){return (n+'|'+(u||'')).toLowerCase().replace(/[^a-z0-9]+/g,'-')}
+
+  var store={statuses:{},custom:[]};
+  try{var s=JSON.parse(localStorage.getItem(KEY));if(s){store=s;store.statuses=store.statuses||{};store.custom=store.custom||[]}}catch(e){}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}}
+  function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+  function allItems(){
+    var list=SEED.map(function(r){return {cat:r[0],name:r[1],url:r[2],def:r[3],id:id(r[1],r[2])}});
+    store.custom.forEach(function(c){list.push({cat:'My Ideas',name:c.name,url:c.url||'',def:c.status||'idea',id:c.id,custom:true})});
+    return list;
+  }
+  function statusOf(it){return store.statuses[it.id]||it.def}
+  var board=document.getElementById('board'),filter='all';
+
+  function render(){
+    var items=allItems(),counts={idea:0,dev:0,ship:0};
+    items.forEach(function(it){counts[statusOf(it)]++});
+    document.getElementById('c-ship').textContent=counts.ship;
+    document.getElementById('c-dev').textContent=counts.dev;
+    document.getElementById('c-idea').textContent=counts.idea;
+    document.getElementById('c-all').textContent=items.length;
+    board.innerHTML='';
+    GROUPS.forEach(function(g){
+      var gi=items.filter(function(it){return it.cat===g});
+      if(!gi.length) return;
+      var wrap=document.createElement('div');wrap.className='group';wrap.id='g-'+slug(g);
+      wrap.innerHTML='<h2>'+esc(g)+'</h2>';
+      gi.forEach(function(it){
+        var st=statusOf(it),vis=(filter==='all'||filter===st);
+        var row=document.createElement('div');row.className='item is-'+st+(vis?'':' hide');
+        var open=it.url?'<a class="open" href="'+esc(it.url)+'" target="_blank" rel="noopener">Open &#8599;</a>':'';
+        var del=it.custom?'<button class="del" data-del="'+it.id+'" title="Remove">&times;</button>':'';
+        row.innerHTML='<div class="nm">'+esc(it.name)+'<span class="cat">'+esc(it.cat)+'</span></div>'+open+
+          '<div class="pills">'+pill(it.id,'idea',st,'Idea')+pill(it.id,'dev',st,'In dev')+pill(it.id,'ship',st,'Shipped')+'</div>'+del;
+        wrap.appendChild(row);
+      });
+      board.appendChild(wrap);
+    });
+    buildJump(items);bind();
+  }
+  function pill(i,s,cur,l){return '<button class="pill'+(cur===s?' on':'')+'" data-id="'+i+'" data-s="'+s+'">'+l+'</button>'}
+  function bind(){
+    board.querySelectorAll('.pill').forEach(function(b){b.onclick=function(){store.statuses[b.getAttribute('data-id')]=b.getAttribute('data-s');save();render();}});
+    board.querySelectorAll('[data-del]').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-del');store.custom=store.custom.filter(function(c){return c.id!==i});delete store.statuses[i];save();render();}});
+  }
+  function buildJump(items){
+    var sel=document.getElementById('jumpSel');sel.innerHTML='<option value="">Open a page…</option>';
+    items.filter(function(it){return it.url}).forEach(function(it){
+      var o=document.createElement('option');o.value=it.url;o.textContent=it.name;sel.appendChild(o);
+    });
+  }
+  document.getElementById('jumpSel').onchange=function(){if(this.value){window.open(this.value,'_blank','noopener');this.value='';}};
+  document.querySelectorAll('.filter').forEach(function(f){f.onclick=function(){filter=f.getAttribute('data-f');document.querySelectorAll('.filter').forEach(function(x){x.classList.remove('on')});f.classList.add('on');render();}});
+  document.getElementById('addBtn').onclick=function(){
+    var n=document.getElementById('newName').value.trim();if(!n)return;var u=document.getElementById('newUrl').value.trim();
+    store.custom.push({id:'custom-'+id(n,u)+'-'+store.custom.length,name:n,url:u,status:'idea'});save();
+    document.getElementById('newName').value='';document.getElementById('newUrl').value='';render();
+  };
+  document.getElementById('newName').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('addBtn').click()});
+  document.getElementById('resetBtn').onclick=function(){if(confirm('Reset all statuses to detected defaults? Your added ideas are kept.')){store.statuses={};save();render();}};
+
+  // color swatches (click to copy hex)
+  var sw=document.getElementById('swatches');
+  COLORS.forEach(function(c){
+    var d=document.createElement('div');d.className='sw';d.title='Click to copy '+c[1];
+    d.innerHTML='<div class="chip" style="background:'+c[1]+'"></div><div class="meta"><b>'+c[0]+'</b><span>'+c[1]+'</span></div>';
+    d.onclick=function(){try{navigator.clipboard.writeText(c[1]);d.querySelector('span').textContent='Copied!';setTimeout(function(){d.querySelector('span').textContent=c[1]},900)}catch(e){}};
+    sw.appendChild(d);
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

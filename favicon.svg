@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F2B41A"/><stop offset="1" stop-color="#E37A7A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="76%" cy="22%" r="60%">
+      <stop offset="0" stop-color="#F2B41A" stop-opacity="0.26"/><stop offset="72%" stop-color="#F2B41A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="#073B45"/>
+  <rect width="512" height="512" fill="url(#glow)"/>
+  <text x="256" y="358" font-family="Georgia,serif" font-size="330" font-weight="600" font-style="italic" fill="#F2B41A" text-anchor="middle">N</text>
+  <rect x="0" y="472" width="512" height="40" fill="url(#bar)"/>
+</svg>
