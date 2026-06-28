@@ -132,7 +132,8 @@
 
 <div class="bar"><div class="row">
   <div class="brandmark"><img src="favicon.svg" alt=""> Brand Hub</div>
-  <nav class="nav">
+  <button onclick="hubAdminOpen()" title="Change password" style="flex:none;background:#F2B41A;color:#073B45;border:none;font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.02em;padding:10px 15px;border-radius:8px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px">&#9881; Admin</button>
+  <nav class="nav" style="min-width:0">
     <a href="#g-free-assessments">Assessments</a>
     <a href="#g-lead-magnets">Lead Magnets</a>
     <a href="#g-programs-in-development">Programs</a>
@@ -140,7 +141,6 @@
     <a href="#g-site-brand">Site &amp; Brand</a>
     <a href="#branding">Branding Kit</a>
     <a href="business-strategy.html" target="_blank" rel="noopener">Strategy &#8599;</a>
-    <a href="#" onclick="hubAdminOpen();return false">&#9881; Password</a>
   </nav>
   <div class="jump">
     <select id="jumpSel"><option value="">Open a page…</option></select>
