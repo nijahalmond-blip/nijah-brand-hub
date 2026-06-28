@@ -113,15 +113,20 @@
 </div>
 <script>
 (function(){
-  var HASH='a62c1b7c3e007a4891e136c9bb740cd0c68597b2862f1aadc6c856e4657e2329';
+  // Default password hash, baked in. A password set from the Admin panel
+  // (the "Password" link in the top bar) is stored in localStorage on this
+  // browser and overrides this default here.
+  var DEFAULT_HASH='2732e7d863fd986d2a958946aff0109411d8294787bf65f784e68c1a0fdb24de';
+  function activeHash(){return localStorage.getItem('hub-pwhash')||DEFAULT_HASH;}
   var gate=document.getElementById('gate'),pw=document.getElementById('gatePw'),err=document.getElementById('gateErr');
   function open(){gate.style.display='none';document.body.style.overflow='';}
   if(sessionStorage.getItem('hub-ok')==='1'){open();}else{document.body.style.overflow='hidden';}
   async function sha(s){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('');}
-  async function tryPw(){var h=await sha(pw.value);if(h===HASH){sessionStorage.setItem('hub-ok','1');open();}else{err.textContent='Incorrect password.';pw.value='';pw.focus();}}
+  async function tryPw(){var h=await sha(pw.value);if(h===activeHash()){sessionStorage.setItem('hub-ok','1');open();}else{err.textContent='Incorrect password.';pw.value='';pw.focus();}}
   document.getElementById('gateBtn').onclick=tryPw;
   pw.addEventListener('keydown',function(e){if(e.key==='Enter')tryPw();});
   pw.focus();
+  window.__hubSha=sha; // shared with the Admin password panel
 })();
 </script>
 
@@ -135,6 +140,7 @@
     <a href="#g-site-brand">Site &amp; Brand</a>
     <a href="#branding">Branding Kit</a>
     <a href="business-strategy.html" target="_blank" rel="noopener">Strategy &#8599;</a>
+    <a href="#" onclick="hubAdminOpen();return false">&#9881; Password</a>
   </nav>
   <div class="jump">
     <select id="jumpSel"><option value="">Open a page…</option></select>
@@ -345,6 +351,35 @@
 
   render();
 })();
+</script>
+
+<!-- ADMIN: change password -->
+<div id="hubAdmin" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.6);align-items:center;justify-content:center;padding:24px">
+  <div style="max-width:380px;width:100%;background:#073B45;border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:26px;font-family:'DM Sans',sans-serif;color:#fff">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#F2B41A;margin:0 0 4px">Change Password</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,.7);margin:0 0 16px">Set a new password for the Brand Hub.</p>
+    <input id="hubNew" type="password" placeholder="New password" autocomplete="new-password" style="width:100%;box-sizing:border-box;font-size:15px;padding:12px 14px;border:1px solid rgba(255,255,255,.25);border-radius:10px;background:rgba(255,255,255,.06);color:#fff;outline:none;margin-bottom:10px">
+    <input id="hubConf" type="password" placeholder="Confirm new password" autocomplete="new-password" style="width:100%;box-sizing:border-box;font-size:15px;padding:12px 14px;border:1px solid rgba(255,255,255,.25);border-radius:10px;background:rgba(255,255,255,.06);color:#fff;outline:none">
+    <p id="hubMsg" style="font-size:12px;line-height:1.5;min-height:16px;margin:10px 0 0"></p>
+    <div id="hubHashRow" style="display:none;gap:8px;margin-top:8px">
+      <input id="hubHash" type="text" readonly style="flex:1;min-width:0;font-size:11px;padding:9px 10px;border:1px solid rgba(255,255,255,.2);border-radius:8px;background:rgba(255,255,255,.06);color:#fff;outline:none">
+      <button onclick="hubCopyHash()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:8px;padding:0 12px;font-size:12px;cursor:pointer">Copy</button>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+      <button onclick="hubSavePw()" style="flex:1;min-width:100px;background:#F2B41A;color:#073B45;border:none;font-weight:700;font-size:14px;padding:11px;border-radius:10px;cursor:pointer">Save</button>
+      <button onclick="hubResetPw()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:10px;padding:11px 12px;font-size:13px;cursor:pointer">Reset to default</button>
+      <button onclick="hubAdminClose()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:10px;padding:11px 12px;font-size:13px;cursor:pointer">Close</button>
+    </div>
+  </div>
+</div>
+<script>
+function hubAdminOpen(){var m=document.getElementById('hubAdmin');m.style.display='flex';document.getElementById('hubMsg').textContent='';document.getElementById('hubHashRow').style.display='none';document.getElementById('hubNew').value='';document.getElementById('hubConf').value='';document.getElementById('hubNew').focus();}
+function hubAdminClose(){document.getElementById('hubAdmin').style.display='none';}
+function hubSetMsg(t,ok){var e=document.getElementById('hubMsg');e.textContent=t;e.style.color=ok?'#F2B41A':'#E37A7A';}
+async function hubSavePw(){var a=document.getElementById('hubNew').value,b=document.getElementById('hubConf').value;if(a.length<4){hubSetMsg('Use at least 4 characters.',false);return;}if(a!==b){hubSetMsg('Passwords do not match.',false);return;}var h=await window.__hubSha(a);localStorage.setItem('hub-pwhash',h);document.getElementById('hubHash').value=h;document.getElementById('hubHashRow').style.display='flex';hubSetMsg('Updated on this browser. To make it permanent for everyone and every device, send the hash below to be saved in the code.',true);}
+function hubResetPw(){localStorage.removeItem('hub-pwhash');document.getElementById('hubHashRow').style.display='none';hubSetMsg('Reset to the built-in password.',true);}
+function hubCopyHash(){var h=document.getElementById('hubHash');h.select();try{navigator.clipboard.writeText(h.value);hubSetMsg('Hash copied.',true);}catch(e){}}
+document.addEventListener('keydown',function(e){if(e.key==='Enter'&&document.getElementById('hubAdmin').style.display==='flex')hubSavePw();});
 </script>
 </body>
 </html>
